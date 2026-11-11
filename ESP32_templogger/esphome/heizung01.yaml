@@ -1,0 +1,210 @@
+# =============================================================================
+#  heizung01.yaml  –  DAQ-Logger auf ESPHome (Waveshare ESP32-P4-WIFI6-POE-ETH)
+# -----------------------------------------------------------------------------
+#  Alle 10 s: 1-Wire-Temperaturen (DS18B20) + Modbus-Stromzähler (RS485) messen
+#  und sofort als EIN JSON-Request (API_SCHNITTSTELLE.md v0.3) an die Python-API
+#  senden. Kein Zwischenspeicher. Die Ablaufsteuerung steckt in der eigenen
+#  Komponente components/daq_push (C++).
+#
+#  Prüfen:     esphome config heizung01.yaml
+#  Bauen:      esphome compile heizung01.yaml
+#  Flashen:    esphome run heizung01.yaml        (erstmals per USB, danach OTA)
+#
+#  Werte mit  >>> ANPASSEN <<<  vor dem ersten Einsatz prüfen.
+#  Geheimnisse (API-Key, URL, OTA-Passwort) stehen in secrets.yaml.
+# =============================================================================
+
+substitutions:
+  device_id: heizung01                 # >>> ANPASSEN <<<
+  firmware: "2.0.0-esphome"
+
+esphome:
+  name: ${device_id}
+  comment: "DAQ-Logger Heizung – Temperaturen (1-Wire) und Stromzähler (Modbus RTU)"
+
+esp32:
+  # Verbautes Board: Chip-Revision v3.2 (400 MHz, per esptool flash-id gelesen).
+  # Für Chips vor Revision 3.00 (360 MHz) stattdessen "esp32-p4" verwenden.
+  board: esp32-p4_r3                   # >>> ANPASSEN <<<
+  variant: esp32p4
+  # Board hat 32 MB; ESPHome erlaubt OTA mit 32 MB nur mit experimentellen
+  # IDF-Funktionen. 16 MB reichen für diese Firmware bei Weitem.
+  flash_size: 16MB
+  framework:
+    type: esp-idf
+
+external_components:
+  - source:
+      type: local
+      path: components
+
+# Ausgaben über die USB-C-Buchse "UART" (UART0, GPIO37/38).
+logger:
+  level: INFO
+  hardware_uart: UART0
+
+ota:
+  - platform: esphome
+    password: !secret ota_password
+
+# -----------------------------------------------------------------------------
+#  Netzwerk: 100-Mbit-Ethernet (PHY IP101GRI), Pins laut Waveshare-Wiki.
+#  Die RMII-Datenleitungen (28-30, 34, 35, 49) legt ESPHome für den P4 fest.
+# -----------------------------------------------------------------------------
+ethernet:
+  type: IP101
+  mdc_pin: GPIO31
+  mdio_pin: GPIO52
+  clk:
+    pin: GPIO50
+    mode: CLK_EXT_IN
+  power_pin: GPIO51
+  phy_addr: 1
+
+# Zeit per NTP; gesendet wird Unix-Zeit (UTC). Zeitzone nur für Logs.
+time:
+  - platform: sntp
+    id: sntp_time
+    timezone: Europe/Berlin
+    servers:
+      - pool.ntp.org
+      - ptbtime1.ptb.de
+
+http_request:
+  id: http
+  timeout: 5s
+  # Nur für https: true = Zertifikat gegen das ESP-IDF-Zertifikatspaket prüfen.
+  verify_ssl: true
+  # Senden blockiert bis zu 2 x timeout (Verbindung + Antwort).
+  watchdog_timeout: 15s
+
+# -----------------------------------------------------------------------------
+#  1-Wire-Busse (je 4,7 kOhm Pull-up nach 3,3 V). Laut Waveshare-Wiki belegt
+#  (NICHT verwenden): 7, 8 (I2C), 9-13, 53 (Audio), 39-44 (SD), 28-35, 49-52
+#  (Ethernet), 37/38 (UART0). Pins am Header-Pinout prüfen!   >>> ANPASSEN <<<
+# -----------------------------------------------------------------------------
+one_wire:
+  - platform: gpio
+    id: bus_a
+    pin: GPIO20
+  - platform: gpio
+    id: bus_b
+    pin: GPIO21
+
+# -----------------------------------------------------------------------------
+#  DS18B20: je Fühler ein Eintrag mit ROM-Adresse. Die Adressen gibt ESPHome
+#  beim Start im Log aus ("Found devices: 0x..."), wenn die Busse oben
+#  konfiguriert sind. Neue Fühler: hier UND unten bei daq_push eintragen.
+#  update_interval MUSS "never" sein – gemessen wird im Takt von daq_push.
+#  Beispieladressen unten durch die echten ersetzen.          >>> ANPASSEN <<<
+# -----------------------------------------------------------------------------
+sensor:
+  - platform: dallas_temp
+    one_wire_id: bus_a
+    id: t01
+    name: "T01 VL Kessel"
+    address: 0x8403168C1E64FF28
+    resolution: 12
+    update_interval: never
+  - platform: dallas_temp
+    one_wire_id: bus_a
+    id: t02
+    name: "T02 RL Kessel"
+    address: 0x615E4D3C2B0AFF28
+    resolution: 12
+    update_interval: never
+  # Vorlage für weitere Fühler (bis T12):
+  # - platform: dallas_temp
+  #   one_wire_id: bus_b
+  #   id: t03
+  #   name: "T03 VL HK1"
+  #   address: 0x....
+  #   resolution: 12
+  #   update_interval: never
+
+# -----------------------------------------------------------------------------
+#  Modbus RTU über Waveshare TTL-zu-RS485-Konverter (C) (automatische
+#  Richtungsumschaltung, daher kein flow_control_pin).        >>> ANPASSEN <<<
+#  Baudrate/Parität laut Zähler (Eastron SDM630 ab Werk: 9600 8N1).
+# -----------------------------------------------------------------------------
+uart:
+  id: rs485
+  tx_pin: GPIO22
+  rx_pin: GPIO23
+  baud_rate: 9600
+  parity: NONE
+  stop_bits: 1
+
+modbus:
+  id: modbus_bus
+  uart_id: rs485
+
+modbus_controller:
+  - id: zaehler1
+    modbus_id: modbus_bus
+    address: 1                         # Modbus-Adresse = "meter" im JSON
+    update_interval: never             # daq_push fragt im 10-s-Takt ab
+    max_cmd_retries: 1
+
+# Rohregister als Hex-Text; dekodiert wird in daq_push (double, exakt).
+# Beispiel Eastron SDM630: Input-Register ("read"), float32 Big Endian.
+# Registertabelle des tatsächlich verbauten Zählers verwenden! >>> ANPASSEN <<<
+text_sensor:
+  - platform: modbus_controller
+    modbus_controller_id: zaehler1
+    id: z1_p_ges
+    internal: true
+    register_type: read
+    address: 0x0034
+    response_size: 4
+    raw_encode: HEXBYTES
+  - platform: modbus_controller
+    modbus_controller_id: zaehler1
+    id: z1_e_import
+    internal: true
+    register_type: read
+    address: 0x0048
+    response_size: 4
+    raw_encode: HEXBYTES
+  - platform: modbus_controller
+    modbus_controller_id: zaehler1
+    id: z1_u_l1
+    internal: true
+    register_type: read
+    address: 0x0000
+    response_size: 4
+    raw_encode: HEXBYTES
+
+# -----------------------------------------------------------------------------
+#  Ablaufsteuerung: messen -> sammeln -> senden (eigene Komponente)
+# -----------------------------------------------------------------------------
+daq_push:
+  device_id: ${device_id}
+  firmware: ${firmware}
+  url: !secret api_url
+  api_key: !secret api_key
+  time_id: sntp_time
+  http_request_id: http
+  update_interval: 10s
+  collect_time: 2s                     # Wandlung 750 ms + RS485-Abfragen
+  temp_min: -40
+  temp_max: 110
+  plausible_delta_85: 5
+  temperatures:
+    - sensor_id: t01
+      name: T01_VL_Kessel
+    - sensor_id: t02
+      name: T02_RL_Kessel
+  meter_registers:
+    - text_sensor_id: z1_p_ges
+      quantity: P_ges
+      unit: W
+      type: FLOAT32
+    - text_sensor_id: z1_e_import
+      quantity: E_import
+      unit: kWh
+      type: FLOAT32
+    - text_sensor_id: z1_u_l1
+      quantity: U_L1
+      unit: V
+      type: FLOAT32

@@ -1,0 +1,7 @@
+{
+  "name": "HostSim",
+  "version": "0.1.0",
+  "description": "Host-Simulation fuer die Tests (env:native): Ersatz fuer Arduino-Core, ETH, HTTPClient, eModbus, Task-Watchdog und OneWire mit simulierten DS18B20. NUR fuer Tests, nie fuer den ESP32 bauen.",
+  "frameworks": "*",
+  "platforms": "native"
+}
