@@ -113,8 +113,8 @@ constexpr uint32_t MODBUS_TIMEOUT_MS = 1000;                             // je A
 // Wandler A+ -> Zähler Klemme 5 (A), B- -> Klemme 6 (B), GND/PE -> Klemme 7.
 // NICHT GPIO 37/38 ("TXD"/"RXD" im Pinout): das ist UART0 des Seriellen Monitors
 // (USB-C "UART"). Frei am Header sind z. B. GPIO 22 und 23.               >>> ANPASSEN <<<
-constexpr int8_t RS485_TX_PIN = 22;   // Header Pin 15 (rechts, neben GPIO21)
-constexpr int8_t RS485_RX_PIN = 23;   // Header Pin 7  (links, unter SCL/GPIO8)
+constexpr int8_t RS485_TX_PIN = 22;   // Header: rechte Reihe, gegenüber GPIO21
+constexpr int8_t RS485_RX_PIN = 23;   // Header: linke Reihe, unter SCL/GPIO8
 // Wandler mit automatischer Richtungsumschaltung (nur VCC/GND/TXD/RXD): -1.
 // Wandler mit DE- und RE-Pin (z. B. MAX485, Beschriftung DI/RO/DE/RE): DE und RE
 // verbinden und an diesen GPIO legen.
