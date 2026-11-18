@@ -1,0 +1,1716 @@
+{
+ "commands": [
+  {
+   "command": "solid.box",
+   "params": {
+    "corner": [
+     -2.0,
+     -2.0,
+     0
+    ],
+    "length": 104.0,
+    "width": 84.0,
+    "height": 37.0,
+    "body_name": "Unterteil"
+   }
+  },
+  {
+   "command": "solid.fillet",
+   "params": {
+    "edges": [
+     [
+      -2.0,
+      -2.0,
+      18.5
+     ],
+     [
+      102.0,
+      -2.0,
+      18.5
+     ],
+     [
+      102.0,
+      82.0,
+      18.5
+     ],
+     [
+      -2.0,
+      82.0,
+      18.5
+     ]
+    ],
+    "radius": 3.0,
+    "body": "Unterteil"
+   }
+  },
+  {
+   "command": "solid.shell",
+   "params": {
+    "faces": [
+     [
+      50.0,
+      40.0,
+      37.0
+     ]
+    ],
+    "thickness": 2.0,
+    "direction": "inside",
+    "body": "Unterteil"
+   }
+  },
+  {
+   "command": "plastic.boss",
+   "params": {
+    "position": [
+     3.5,
+     3.5,
+     2.0
+    ],
+    "diameter": 8.0,
+    "height": 35.0,
+    "hole_diameter": 2.5,
+    "hole_depth": 14.0,
+    "body": "Unterteil"
+   }
+  },
+  {
+   "command": "plastic.boss",
+   "params": {
+    "position": [
+     96.5,
+     3.5,
+     2.0
+    ],
+    "diameter": 8.0,
+    "height": 35.0,
+    "hole_diameter": 2.5,
+    "hole_depth": 14.0,
+    "body": "Unterteil"
+   }
+  },
+  {
+   "command": "plastic.boss",
+   "params": {
+    "position": [
+     96.5,
+     76.5,
+     2.0
+    ],
+    "diameter": 8.0,
+    "height": 35.0,
+    "hole_diameter": 2.5,
+    "hole_depth": 14.0,
+    "body": "Unterteil"
+   }
+  },
+  {
+   "command": "plastic.boss",
+   "params": {
+    "position": [
+     3.5,
+     76.5,
+     2.0
+    ],
+    "diameter": 8.0,
+    "height": 35.0,
+    "hole_diameter": 2.5,
+    "hole_depth": 14.0,
+    "body": "Unterteil"
+   }
+  },
+  {
+   "command": "plastic.boss",
+   "params": {
+    "position": [
+     12.0,
+     25.5,
+     2.0
+    ],
+    "diameter": 6.0,
+    "height": 5.0,
+    "hole_diameter": 2.2,
+    "fillet": 0.5,
+    "body": "Unterteil"
+   }
+  },
+  {
+   "command": "plastic.boss",
+   "params": {
+    "position": [
+     60.0,
+     25.5,
+     2.0
+    ],
+    "diameter": 6.0,
+    "height": 5.0,
+    "hole_diameter": 2.2,
+    "fillet": 0.5,
+    "body": "Unterteil"
+   }
+  },
+  {
+   "command": "plastic.boss",
+   "params": {
+    "position": [
+     12.0,
+     58.5,
+     2.0
+    ],
+    "diameter": 6.0,
+    "height": 5.0,
+    "hole_diameter": 2.2,
+    "fillet": 0.5,
+    "body": "Unterteil"
+   }
+  },
+  {
+   "command": "plastic.boss",
+   "params": {
+    "position": [
+     60.0,
+     58.5,
+     2.0
+    ],
+    "diameter": 6.0,
+    "height": 5.0,
+    "hole_diameter": 2.2,
+    "fillet": 0.5,
+    "body": "Unterteil"
+   }
+  },
+  {
+   "command": "plastic.boss",
+   "params": {
+    "position": [
+     68.0,
+     22.0,
+     2.0
+    ],
+    "diameter": 6.0,
+    "height": 6.0,
+    "hole_diameter": 2.2,
+    "fillet": 0.5,
+    "body": "Unterteil"
+   }
+  },
+  {
+   "command": "plastic.boss",
+   "params": {
+    "position": [
+     95.94,
+     22.0,
+     2.0
+    ],
+    "diameter": 6.0,
+    "height": 6.0,
+    "hole_diameter": 2.2,
+    "fillet": 0.5,
+    "body": "Unterteil"
+   }
+  },
+  {
+   "command": "plastic.boss",
+   "params": {
+    "position": [
+     68.0,
+     60.1,
+     2.0
+    ],
+    "diameter": 6.0,
+    "height": 6.0,
+    "hole_diameter": 2.2,
+    "fillet": 0.5,
+    "body": "Unterteil"
+   }
+  },
+  {
+   "command": "plastic.boss",
+   "params": {
+    "position": [
+     95.94,
+     60.1,
+     2.0
+    ],
+    "diameter": 6.0,
+    "height": 6.0,
+    "hole_diameter": 2.2,
+    "fillet": 0.5,
+    "body": "Unterteil"
+   }
+  },
+  {
+   "command": "solid.box",
+   "params": {
+    "corner": [
+     13.0,
+     -3.0,
+     8.1
+    ],
+    "length": 15.0,
+    "width": 4.0,
+    "height": 16.0,
+    "name": "Ausschnitt USB",
+    "operation": "cut",
+    "targets": [
+     "Unterteil"
+    ]
+   }
+  },
+  {
+   "command": "solid.box",
+   "params": {
+    "corner": [
+     29.83,
+     -3.0,
+     8.1
+    ],
+    "length": 17.2,
+    "width": 4.0,
+    "height": 15.0,
+    "name": "Ausschnitt RJ45",
+    "operation": "cut",
+    "targets": [
+     "Unterteil"
+    ]
+   }
+  },
+  {
+   "command": "solid.box",
+   "params": {
+    "corner": [
+     46.5,
+     -3.0,
+     6.0
+    ],
+    "length": 13.8,
+    "width": 4.0,
+    "height": 6.1,
+    "name": "Ausschnitt TF",
+    "operation": "cut",
+    "targets": [
+     "Unterteil"
+    ]
+   }
+  },
+  {
+   "command": "solid.hole",
+   "params": {
+    "position": [
+     85.0,
+     82.0,
+     22.0
+    ],
+    "diameter": 6.5,
+    "depth": 3.0,
+    "targets": [
+     "Unterteil"
+    ],
+    "name": "Loch SMA-Antenne"
+   }
+  },
+  {
+   "command": "solid.hole",
+   "params": {
+    "position": [
+     62.0,
+     -2.0,
+     23.0
+    ],
+    "diameter": 12.4,
+    "depth": 3.0,
+    "targets": [
+     "Unterteil"
+    ],
+    "name": "Loch 1-Wire Bus 1"
+   }
+  },
+  {
+   "command": "solid.hole",
+   "params": {
+    "position": [
+     83.0,
+     -2.0,
+     23.0
+    ],
+    "diameter": 12.4,
+    "depth": 3.0,
+    "targets": [
+     "Unterteil"
+    ],
+    "name": "Loch 1-Wire Bus 2"
+   }
+  },
+  {
+   "command": "solid.hole",
+   "params": {
+    "position": [
+     68.0,
+     82.0,
+     22.0
+    ],
+    "diameter": 16.4,
+    "depth": 3.0,
+    "targets": [
+     "Unterteil"
+    ],
+    "name": "Loch RS485"
+   }
+  },
+  {
+   "command": "solid.box",
+   "params": {
+    "corner": [
+     69.0,
+     8.0,
+     2.0
+    ],
+    "length": 7.0,
+    "width": 6.0,
+    "height": 4.5,
+    "name": "Kabelbinder-Sockel 1",
+    "operation": "join",
+    "targets": [
+     "Unterteil"
+    ]
+   }
+  },
+  {
+   "command": "solid.box",
+   "params": {
+    "corner": [
+     68.0,
+     9.3,
+     2.0
+    ],
+    "length": 9.0,
+    "width": 3.4,
+    "height": 1.8,
+    "name": "Kabelbinder-Tunnel 1",
+    "operation": "cut",
+    "targets": [
+     "Unterteil"
+    ]
+   }
+  },
+  {
+   "command": "solid.box",
+   "params": {
+    "corner": [
+     65.0,
+     67.0,
+     2.0
+    ],
+    "length": 6.0,
+    "width": 7.0,
+    "height": 4.5,
+    "name": "Kabelbinder-Sockel 2",
+    "operation": "join",
+    "targets": [
+     "Unterteil"
+    ]
+   }
+  },
+  {
+   "command": "solid.box",
+   "params": {
+    "corner": [
+     66.3,
+     66.0,
+     2.0
+    ],
+    "length": 3.4,
+    "width": 9.0,
+    "height": 1.8,
+    "name": "Kabelbinder-Tunnel 2",
+    "operation": "cut",
+    "targets": [
+     "Unterteil"
+    ]
+   }
+  },
+  {
+   "command": "sketch.create",
+   "params": {
+    "plane": {
+     "origin": [
+      0,
+      -2.0,
+      0
+     ],
+     "x_dir": [
+      1,
+      0,
+      0
+     ],
+     "y_dir": [
+      0,
+      0,
+      1
+     ]
+    },
+    "name": "Beschriftung vorn"
+   }
+  },
+  {
+   "command": "sketch.text",
+   "params": {
+    "text": "BUS 1",
+    "at": [
+     62.0,
+     32.5
+    ],
+    "height": 3.5,
+    "align": "center",
+    "font": "Arial",
+    "bold": true
+   }
+  },
+  {
+   "command": "sketch.text",
+   "params": {
+    "text": "BUS 2",
+    "at": [
+     83.0,
+     32.5
+    ],
+    "height": 3.5,
+    "align": "center",
+    "font": "Arial",
+    "bold": true
+   }
+  },
+  {
+   "command": "sketch.text",
+   "params": {
+    "text": "PoE",
+    "at": [
+     38.43,
+     25.6
+    ],
+    "height": 3.5,
+    "align": "center",
+    "font": "Arial",
+    "bold": true
+   }
+  },
+  {
+   "command": "sketch.finish",
+   "params": {}
+  },
+  {
+   "command": "solid.emboss",
+   "params": {
+    "sketch": "Beschriftung vorn",
+    "depth": 0.5,
+    "mode": "deboss",
+    "targets": [
+     "Unterteil"
+    ],
+    "face": [
+     95.0,
+     -2.0,
+     5.0
+    ]
+   }
+  },
+  {
+   "command": "sketch.create",
+   "params": {
+    "plane": {
+     "origin": [
+      0,
+      82.0,
+      0
+     ],
+     "x_dir": [
+      -1,
+      0,
+      0
+     ],
+     "y_dir": [
+      0,
+      0,
+      1
+     ]
+    },
+    "name": "Beschriftung hinten"
+   }
+  },
+  {
+   "command": "sketch.text",
+   "params": {
+    "text": "RS485",
+    "at": [
+     -48.0,
+     20.25
+    ],
+    "height": 3.5,
+    "align": "center",
+    "font": "Arial",
+    "bold": true
+   }
+  },
+  {
+   "command": "sketch.finish",
+   "params": {}
+  },
+  {
+   "command": "solid.emboss",
+   "params": {
+    "sketch": "Beschriftung hinten",
+    "depth": 0.5,
+    "mode": "deboss",
+    "targets": [
+     "Unterteil"
+    ],
+    "face": [
+     30.0,
+     82.0,
+     5.0
+    ]
+   }
+  },
+  {
+   "command": "solid.box",
+   "params": {
+    "corner": [
+     -2.0,
+     -2.0,
+     37.0
+    ],
+    "length": 104.0,
+    "width": 84.0,
+    "height": 2.0,
+    "body_name": "Deckel"
+   }
+  },
+  {
+   "command": "solid.fillet",
+   "params": {
+    "edges": [
+     [
+      -2.0,
+      -2.0,
+      38.0
+     ],
+     [
+      102.0,
+      -2.0,
+      38.0
+     ],
+     [
+      102.0,
+      82.0,
+      38.0
+     ],
+     [
+      -2.0,
+      82.0,
+      38.0
+     ]
+    ],
+    "radius": 3.0,
+    "body": "Deckel"
+   }
+  },
+  {
+   "command": "solid.box",
+   "params": {
+    "corner": [
+     0.3,
+     0.3,
+     34.0
+    ],
+    "length": 99.4,
+    "width": 79.4,
+    "height": 3.0,
+    "name": "Zentrierrand",
+    "operation": "join",
+    "targets": [
+     "Deckel"
+    ]
+   }
+  },
+  {
+   "command": "solid.box",
+   "params": {
+    "corner": [
+     1.8,
+     1.8,
+     33.0
+    ],
+    "length": 96.4,
+    "width": 76.4,
+    "height": 4.0,
+    "name": "Zentrierrand innen",
+    "operation": "cut",
+    "targets": [
+     "Deckel"
+    ]
+   }
+  },
+  {
+   "command": "solid.cylinder",
+   "params": {
+    "base": [
+     3.5,
+     3.5,
+     33.0
+    ],
+    "diameter": 9.0,
+    "height": 4.0,
+    "operation": "cut",
+    "targets": [
+     "Deckel"
+    ],
+    "name": "Freischnitt Dom 1"
+   }
+  },
+  {
+   "command": "solid.cylinder",
+   "params": {
+    "base": [
+     96.5,
+     3.5,
+     33.0
+    ],
+    "diameter": 9.0,
+    "height": 4.0,
+    "operation": "cut",
+    "targets": [
+     "Deckel"
+    ],
+    "name": "Freischnitt Dom 2"
+   }
+  },
+  {
+   "command": "solid.cylinder",
+   "params": {
+    "base": [
+     96.5,
+     76.5,
+     33.0
+    ],
+    "diameter": 9.0,
+    "height": 4.0,
+    "operation": "cut",
+    "targets": [
+     "Deckel"
+    ],
+    "name": "Freischnitt Dom 3"
+   }
+  },
+  {
+   "command": "solid.cylinder",
+   "params": {
+    "base": [
+     3.5,
+     76.5,
+     33.0
+    ],
+    "diameter": 9.0,
+    "height": 4.0,
+    "operation": "cut",
+    "targets": [
+     "Deckel"
+    ],
+    "name": "Freischnitt Dom 4"
+   }
+  },
+  {
+   "command": "solid.hole",
+   "params": {
+    "position": [
+     3.5,
+     3.5,
+     39.0
+    ],
+    "diameter": 3.4,
+    "depth": 2.5,
+    "targets": [
+     "Deckel"
+    ]
+   }
+  },
+  {
+   "command": "solid.hole",
+   "params": {
+    "position": [
+     96.5,
+     3.5,
+     39.0
+    ],
+    "diameter": 3.4,
+    "depth": 2.5,
+    "targets": [
+     "Deckel"
+    ]
+   }
+  },
+  {
+   "command": "solid.hole",
+   "params": {
+    "position": [
+     96.5,
+     76.5,
+     39.0
+    ],
+    "diameter": 3.4,
+    "depth": 2.5,
+    "targets": [
+     "Deckel"
+    ]
+   }
+  },
+  {
+   "command": "solid.hole",
+   "params": {
+    "position": [
+     3.5,
+     76.5,
+     39.0
+    ],
+    "diameter": 3.4,
+    "depth": 2.5,
+    "targets": [
+     "Deckel"
+    ]
+   }
+  },
+  {
+   "command": "solid.box",
+   "params": {
+    "corner": [
+     21.0,
+     22.0,
+     36.0
+    ],
+    "length": 2.0,
+    "width": 36.0,
+    "height": 4.0,
+    "operation": "cut",
+    "targets": [
+     "Deckel"
+    ]
+   }
+  },
+  {
+   "command": "solid.box",
+   "params": {
+    "corner": [
+     26.0,
+     22.0,
+     36.0
+    ],
+    "length": 2.0,
+    "width": 36.0,
+    "height": 4.0,
+    "operation": "cut",
+    "targets": [
+     "Deckel"
+    ]
+   }
+  },
+  {
+   "command": "solid.box",
+   "params": {
+    "corner": [
+     31.0,
+     22.0,
+     36.0
+    ],
+    "length": 2.0,
+    "width": 36.0,
+    "height": 4.0,
+    "operation": "cut",
+    "targets": [
+     "Deckel"
+    ]
+   }
+  },
+  {
+   "command": "solid.box",
+   "params": {
+    "corner": [
+     36.0,
+     22.0,
+     36.0
+    ],
+    "length": 2.0,
+    "width": 36.0,
+    "height": 4.0,
+    "operation": "cut",
+    "targets": [
+     "Deckel"
+    ]
+   }
+  },
+  {
+   "command": "solid.box",
+   "params": {
+    "corner": [
+     41.0,
+     22.0,
+     36.0
+    ],
+    "length": 2.0,
+    "width": 36.0,
+    "height": 4.0,
+    "operation": "cut",
+    "targets": [
+     "Deckel"
+    ]
+   }
+  },
+  {
+   "command": "solid.box",
+   "params": {
+    "corner": [
+     46.0,
+     22.0,
+     36.0
+    ],
+    "length": 2.0,
+    "width": 36.0,
+    "height": 4.0,
+    "operation": "cut",
+    "targets": [
+     "Deckel"
+    ]
+   }
+  },
+  {
+   "command": "solid.box",
+   "params": {
+    "corner": [
+     51.0,
+     22.0,
+     36.0
+    ],
+    "length": 2.0,
+    "width": 36.0,
+    "height": 4.0,
+    "operation": "cut",
+    "targets": [
+     "Deckel"
+    ]
+   }
+  },
+  {
+   "command": "solid.box",
+   "params": {
+    "corner": [
+     56.0,
+     22.0,
+     36.0
+    ],
+    "length": 2.0,
+    "width": 36.0,
+    "height": 4.0,
+    "operation": "cut",
+    "targets": [
+     "Deckel"
+    ]
+   }
+  },
+  {
+   "command": "solid.box",
+   "params": {
+    "corner": [
+     2.0,
+     18.499999999999996,
+     -4.0
+    ],
+    "length": 96.0,
+    "width": 41.8,
+    "height": 4.0,
+    "body_name": "Hutschienenclip"
+   }
+  },
+  {
+   "command": "solid.box",
+   "params": {
+    "corner": [
+     10.0,
+     20.099999999999998,
+     -5.0
+    ],
+    "length": 80.0,
+    "width": 2.6,
+    "height": 6.0,
+    "name": "Schlitz Federbalken",
+    "operation": "cut",
+    "targets": [
+     "Hutschienenclip"
+    ]
+   }
+  },
+  {
+   "command": "solid.box",
+   "params": {
+    "corner": [
+     45.0,
+     18.499999999999996,
+     -7.3
+    ],
+    "length": 10.0,
+    "width": 3.7,
+    "height": 7.3,
+    "name": "Rastnase",
+    "operation": "join",
+    "targets": [
+     "Hutschienenclip"
+    ]
+   }
+  },
+  {
+   "command": "solid.box",
+   "params": {
+    "corner": [
+     45.0,
+     22.189999999999998,
+     -7.3
+    ],
+    "length": 10.0,
+    "width": 1.81,
+    "height": 2.0,
+    "name": "Rastnase Lippe",
+    "operation": "join",
+    "targets": [
+     "Hutschienenclip"
+    ]
+   }
+  },
+  {
+   "command": "solid.chamfer",
+   "params": {
+    "edges": [
+     [
+      50.0,
+      24.0,
+      -7.3
+     ]
+    ],
+    "distance": 1.7,
+    "body": "Hutschienenclip",
+    "tangent_chain": false
+   }
+  },
+  {
+   "command": "solid.box",
+   "params": {
+    "corner": [
+     45.0,
+     0.0,
+     -3.0
+    ],
+    "length": 10.0,
+    "width": 18.51,
+    "height": 3.0,
+    "name": "Zuglasche",
+    "operation": "join",
+    "targets": [
+     "Hutschienenclip"
+    ]
+   }
+  },
+  {
+   "command": "solid.box",
+   "params": {
+    "corner": [
+     47.0,
+     2.0,
+     -4.0
+    ],
+    "length": 6.0,
+    "width": 4.0,
+    "height": 5.0,
+    "name": "Schlitz Schraubendreher",
+    "operation": "cut",
+    "targets": [
+     "Hutschienenclip"
+    ]
+   }
+  },
+  {
+   "command": "solid.box",
+   "params": {
+    "corner": [
+     2.0,
+     57.8,
+     -7.3
+    ],
+    "length": 96.0,
+    "width": 2.5,
+    "height": 3.31,
+    "name": "Haken",
+    "operation": "join",
+    "targets": [
+     "Hutschienenclip"
+    ]
+   }
+  },
+  {
+   "command": "solid.box",
+   "params": {
+    "corner": [
+     2.0,
+     56.0,
+     -7.3
+    ],
+    "length": 96.0,
+    "width": 1.81,
+    "height": 2.0,
+    "name": "Haken Lippe",
+    "operation": "join",
+    "targets": [
+     "Hutschienenclip"
+    ]
+   }
+  },
+  {
+   "command": "solid.chamfer",
+   "params": {
+    "edges": [
+     [
+      50.0,
+      56.0,
+      -7.3
+     ]
+    ],
+    "distance": 0.8,
+    "body": "Hutschienenclip",
+    "tangent_chain": false
+   }
+  },
+  {
+   "command": "solid.hole",
+   "params": {
+    "position": [
+     6.0,
+     30.0,
+     -4.0
+    ],
+    "diameter": 2.5,
+    "depth": 4.5,
+    "targets": [
+     "Hutschienenclip"
+    ]
+   }
+  },
+  {
+   "command": "solid.hole",
+   "params": {
+    "position": [
+     6.0,
+     30.0,
+     2.0
+    ],
+    "diameter": 3.4,
+    "depth": 2.5,
+    "targets": [
+     "Unterteil"
+    ]
+   }
+  },
+  {
+   "command": "solid.hole",
+   "params": {
+    "position": [
+     6.0,
+     50.0,
+     -4.0
+    ],
+    "diameter": 2.5,
+    "depth": 4.5,
+    "targets": [
+     "Hutschienenclip"
+    ]
+   }
+  },
+  {
+   "command": "solid.hole",
+   "params": {
+    "position": [
+     6.0,
+     50.0,
+     2.0
+    ],
+    "diameter": 3.4,
+    "depth": 2.5,
+    "targets": [
+     "Unterteil"
+    ]
+   }
+  },
+  {
+   "command": "solid.hole",
+   "params": {
+    "position": [
+     94.0,
+     30.0,
+     -4.0
+    ],
+    "diameter": 2.5,
+    "depth": 4.5,
+    "targets": [
+     "Hutschienenclip"
+    ]
+   }
+  },
+  {
+   "command": "solid.hole",
+   "params": {
+    "position": [
+     94.0,
+     30.0,
+     2.0
+    ],
+    "diameter": 3.4,
+    "depth": 2.5,
+    "targets": [
+     "Unterteil"
+    ]
+   }
+  },
+  {
+   "command": "solid.hole",
+   "params": {
+    "position": [
+     94.0,
+     50.0,
+     -4.0
+    ],
+    "diameter": 2.5,
+    "depth": 4.5,
+    "targets": [
+     "Hutschienenclip"
+    ]
+   }
+  },
+  {
+   "command": "solid.hole",
+   "params": {
+    "position": [
+     94.0,
+     50.0,
+     2.0
+    ],
+    "diameter": 3.4,
+    "depth": 2.5,
+    "targets": [
+     "Unterteil"
+    ]
+   }
+  },
+  {
+   "command": "solid.box",
+   "params": {
+    "corner": [
+     -20,
+     22.5,
+     -5.0
+    ],
+    "length": 140.0,
+    "width": 5.0,
+    "height": 1.0,
+    "body_name": "Hutschiene Platzhalter"
+   }
+  },
+  {
+   "command": "solid.box",
+   "params": {
+    "corner": [
+     -20,
+     52.5,
+     -5.0
+    ],
+    "length": 140.0,
+    "width": 5.0,
+    "height": 1.0,
+    "body_name": "HS2"
+   }
+  },
+  {
+   "command": "solid.box",
+   "params": {
+    "corner": [
+     -20,
+     26.5,
+     -11.5
+    ],
+    "length": 140.0,
+    "width": 1.0,
+    "height": 6.5,
+    "body_name": "HS3"
+   }
+  },
+  {
+   "command": "solid.box",
+   "params": {
+    "corner": [
+     -20,
+     52.5,
+     -11.5
+    ],
+    "length": 140.0,
+    "width": 1.0,
+    "height": 6.5,
+    "body_name": "HS4"
+   }
+  },
+  {
+   "command": "solid.box",
+   "params": {
+    "corner": [
+     -20,
+     26.5,
+     -11.5
+    ],
+    "length": 140.0,
+    "width": 27.0,
+    "height": 1.0,
+    "body_name": "HS5"
+   }
+  },
+  {
+   "command": "solid.combine",
+   "params": {
+    "target": "Hutschiene Platzhalter",
+    "tools": [
+     "HS2",
+     "HS3",
+     "HS4",
+     "HS5"
+    ],
+    "operation": "join",
+    "touching": "one_body"
+   }
+  },
+  {
+   "command": "solid.box",
+   "params": {
+    "corner": [
+     8.5,
+     0.5,
+     7.0
+    ],
+    "length": 55.0,
+    "width": 68.0,
+    "height": 1.6,
+    "body_name": "ESP32-P4 Platzhalter"
+   }
+  },
+  {
+   "command": "solid.box",
+   "params": {
+    "corner": [
+     30.1,
+     -0.8999999999999999,
+     8.6
+    ],
+    "length": 16.6,
+    "width": 21.3,
+    "height": 13.5,
+    "body_name": "P RJ45"
+   }
+  },
+  {
+   "command": "solid.box",
+   "params": {
+    "corner": [
+     13.5,
+     -0.8999999999999999,
+     8.6
+    ],
+    "length": 13.9,
+    "width": 17.8,
+    "height": 14.0,
+    "body_name": "P USB"
+   }
+  },
+  {
+   "command": "solid.box",
+   "params": {
+    "corner": [
+     47.0,
+     1.7,
+     8.6
+    ],
+    "length": 13.6,
+    "width": 11.6,
+    "height": 1.8,
+    "body_name": "P TF"
+   }
+  },
+  {
+   "command": "solid.box",
+   "params": {
+    "corner": [
+     11.5,
+     64.0,
+     8.6
+    ],
+    "length": 49.0,
+    "width": 3.0,
+    "height": 8.5,
+    "body_name": "P Stiftleiste"
+   }
+  },
+  {
+   "command": "solid.combine",
+   "params": {
+    "target": "ESP32-P4 Platzhalter",
+    "tools": [
+     "P RJ45",
+     "P USB",
+     "P TF",
+     "P Stiftleiste"
+    ],
+    "operation": "join"
+   }
+  },
+  {
+   "command": "solid.cylinder",
+   "params": {
+    "base": [
+     12.0,
+     25.5,
+     6.5
+    ],
+    "diameter": 2.7,
+    "height": 2.6,
+    "operation": "cut",
+    "targets": [
+     "ESP32-P4 Platzhalter"
+    ]
+   }
+  },
+  {
+   "command": "solid.cylinder",
+   "params": {
+    "base": [
+     60.0,
+     25.5,
+     6.5
+    ],
+    "diameter": 2.7,
+    "height": 2.6,
+    "operation": "cut",
+    "targets": [
+     "ESP32-P4 Platzhalter"
+    ]
+   }
+  },
+  {
+   "command": "solid.cylinder",
+   "params": {
+    "base": [
+     12.0,
+     58.5,
+     6.5
+    ],
+    "diameter": 2.7,
+    "height": 2.6,
+    "operation": "cut",
+    "targets": [
+     "ESP32-P4 Platzhalter"
+    ]
+   }
+  },
+  {
+   "command": "solid.cylinder",
+   "params": {
+    "base": [
+     60.0,
+     58.5,
+     6.5
+    ],
+    "diameter": 2.7,
+    "height": 2.6,
+    "operation": "cut",
+    "targets": [
+     "ESP32-P4 Platzhalter"
+    ]
+   }
+  },
+  {
+   "command": "solid.cylinder",
+   "params": {
+    "base": [
+     62.0,
+     -12.0,
+     23.0
+    ],
+    "axis": "Y",
+    "diameter": 12.0,
+    "height": 8.0,
+    "body_name": "GX12 Bus 1 Platzhalter"
+   }
+  },
+  {
+   "command": "solid.cylinder",
+   "params": {
+    "base": [
+     62.0,
+     -4.0,
+     23.0
+    ],
+    "axis": "Y",
+    "diameter": 16.0,
+    "height": 2.0,
+    "operation": "join",
+    "targets": [
+     "GX12 Bus 1 Platzhalter"
+    ]
+   }
+  },
+  {
+   "command": "solid.cylinder",
+   "params": {
+    "base": [
+     62.0,
+     -2.0,
+     23.0
+    ],
+    "axis": "Y",
+    "diameter": 12.0,
+    "height": 2.0,
+    "operation": "join",
+    "targets": [
+     "GX12 Bus 1 Platzhalter"
+    ]
+   }
+  },
+  {
+   "command": "solid.cylinder",
+   "params": {
+    "base": [
+     62.0,
+     0.0,
+     23.0
+    ],
+    "axis": "Y",
+    "diameter": 16.0,
+    "height": 2.5,
+    "operation": "join",
+    "targets": [
+     "GX12 Bus 1 Platzhalter"
+    ]
+   }
+  },
+  {
+   "command": "solid.cylinder",
+   "params": {
+    "base": [
+     62.0,
+     2.5,
+     23.0
+    ],
+    "axis": "Y",
+    "diameter": 11.0,
+    "height": 13.5,
+    "operation": "join",
+    "targets": [
+     "GX12 Bus 1 Platzhalter"
+    ]
+   }
+  },
+  {
+   "command": "solid.cylinder",
+   "params": {
+    "base": [
+     83.0,
+     -12.0,
+     23.0
+    ],
+    "axis": "Y",
+    "diameter": 12.0,
+    "height": 8.0,
+    "body_name": "GX12 Bus 2 Platzhalter"
+   }
+  },
+  {
+   "command": "solid.cylinder",
+   "params": {
+    "base": [
+     83.0,
+     -4.0,
+     23.0
+    ],
+    "axis": "Y",
+    "diameter": 16.0,
+    "height": 2.0,
+    "operation": "join",
+    "targets": [
+     "GX12 Bus 2 Platzhalter"
+    ]
+   }
+  },
+  {
+   "command": "solid.cylinder",
+   "params": {
+    "base": [
+     83.0,
+     -2.0,
+     23.0
+    ],
+    "axis": "Y",
+    "diameter": 12.0,
+    "height": 2.0,
+    "operation": "join",
+    "targets": [
+     "GX12 Bus 2 Platzhalter"
+    ]
+   }
+  },
+  {
+   "command": "solid.cylinder",
+   "params": {
+    "base": [
+     83.0,
+     0.0,
+     23.0
+    ],
+    "axis": "Y",
+    "diameter": 16.0,
+    "height": 2.5,
+    "operation": "join",
+    "targets": [
+     "GX12 Bus 2 Platzhalter"
+    ]
+   }
+  },
+  {
+   "command": "solid.cylinder",
+   "params": {
+    "base": [
+     83.0,
+     2.5,
+     23.0
+    ],
+    "axis": "Y",
+    "diameter": 11.0,
+    "height": 13.5,
+    "operation": "join",
+    "targets": [
+     "GX12 Bus 2 Platzhalter"
+    ]
+   }
+  },
+  {
+   "command": "solid.cylinder",
+   "params": {
+    "base": [
+     68.0,
+     66.0,
+     22.0
+    ],
+    "axis": "Y",
+    "diameter": 14.0,
+    "height": 11.0,
+    "body_name": "GX16 RS485 Platzhalter"
+   }
+  },
+  {
+   "command": "solid.cylinder",
+   "params": {
+    "base": [
+     68.0,
+     77.0,
+     22.0
+    ],
+    "axis": "Y",
+    "diameter": 20.0,
+    "height": 3.0,
+    "operation": "join",
+    "targets": [
+     "GX16 RS485 Platzhalter"
+    ]
+   }
+  },
+  {
+   "command": "solid.cylinder",
+   "params": {
+    "base": [
+     68.0,
+     80.0,
+     22.0
+    ],
+    "axis": "Y",
+    "diameter": 16.0,
+    "height": 2.0,
+    "operation": "join",
+    "targets": [
+     "GX16 RS485 Platzhalter"
+    ]
+   }
+  },
+  {
+   "command": "solid.cylinder",
+   "params": {
+    "base": [
+     68.0,
+     82.0,
+     22.0
+    ],
+    "axis": "Y",
+    "diameter": 20.0,
+    "height": 2.0,
+    "operation": "join",
+    "targets": [
+     "GX16 RS485 Platzhalter"
+    ]
+   }
+  },
+  {
+   "command": "solid.cylinder",
+   "params": {
+    "base": [
+     68.0,
+     84.0,
+     22.0
+    ],
+    "axis": "Y",
+    "diameter": 16.0,
+    "height": 8.0,
+    "operation": "join",
+    "targets": [
+     "GX16 RS485 Platzhalter"
+    ]
+   }
+  },
+  {
+   "command": "solid.box",
+   "params": {
+    "corner": [
+     65.0,
+     19.0,
+     8.0
+    ],
+    "length": 34.0,
+    "width": 44.0,
+    "height": 1.6,
+    "body_name": "Traegerplatine Platzhalter"
+   }
+  },
+  {
+   "command": "solid.box",
+   "params": {
+    "corner": [
+     83.3,
+     19.6,
+     9.6
+    ],
+    "length": 15.2,
+    "width": 42.8,
+    "height": 4.75,
+    "name": "RS485-Wandler",
+    "operation": "join",
+    "targets": [
+     "Traegerplatine Platzhalter"
+    ]
+   }
+  }
+ ]
+}

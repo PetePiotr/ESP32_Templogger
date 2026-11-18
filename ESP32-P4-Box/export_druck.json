@@ -1,0 +1,73 @@
+{
+ "commands": [
+  {
+   "command": "file.export",
+   "params": {
+    "path": "C:/Users/peter/OneDrive/Dokumente/SolidCraft/ESP32-P4-Box/ESP32-P4-Box.step",
+    "bodies": [
+     "Unterteil",
+     "Deckel",
+     "Hutschienenclip"
+    ]
+   }
+  },
+  {
+   "command": "file.export",
+   "params": {
+    "path": "C:/Users/peter/OneDrive/Dokumente/SolidCraft/ESP32-P4-Box/Unterteil.stl",
+    "bodies": [
+     "Unterteil"
+    ],
+    "quality": "fine"
+   }
+  },
+  {
+   "command": "solid.move",
+   "params": {
+    "bodies": [
+     "Deckel",
+     "Hutschienenclip"
+    ],
+    "axis": [
+     1,
+     0,
+     0
+    ],
+    "angle": 180
+   }
+  },
+  {
+   "command": "solid.move",
+   "params": {
+    "bodies": [
+     "Deckel"
+    ],
+    "translate": [
+     0,
+     80.0,
+     39.0
+    ]
+   }
+  },
+  {
+   "command": "file.export",
+   "params": {
+    "path": "C:/Users/peter/OneDrive/Dokumente/SolidCraft/ESP32-P4-Box/Deckel.stl",
+    "bodies": [
+     "Deckel"
+    ],
+    "quality": "fine"
+   }
+  },
+  {
+   "command": "file.export",
+   "params": {
+    "path": "C:/Users/peter/OneDrive/Dokumente/SolidCraft/ESP32-P4-Box/Hutschienenclip.stl",
+    "bodies": [
+     "Hutschienenclip"
+    ],
+    "quality": "fine"
+   }
+  }
+ ]
+}
